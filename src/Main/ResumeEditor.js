@@ -1,32 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Academics from "../Components/Academics";
-import Experience from "../Components/Experience";
-import BasicInfo from "../Components/BasicInfo";
-import ProjectDetails from "../Components/ProjectDetails";
-import Skills from "../Components/Skills";
-import OtherDetails from "../Components/OtherDetails";
-import Achivements from "../Components/Achivements";
-
-const ResumeEditor = ({ formData, setFormData, page, setPage, FormTitles }) => {
-  const PageDisplay = () => {
-    if (page === 0) {
-      return <BasicInfo formData={formData} setFormData={setFormData} />;
-    } else if (page === 1) {
-      return <Experience formData={formData} setFormData={setFormData} />;
-    } else if (page === 2) {
-      return <Academics formData={formData} setFormData={setFormData} />;
-    } else if (page === 3) {
-      return <ProjectDetails formData={formData} setFormData={setFormData} />;
-    } else if (page === 4) {
-      return <Achivements formData={formData} setFormData={setFormData} />;
-    } else if (page === 5) {
-      return <Skills formData={formData} setFormData={setFormData} />;
-    } else {
-      return <OtherDetails formData={formData} setFormData={setFormData} />;
-    }
-  };
+const ResumeEditor = ({ page, setPage, FormTitles, PageDisplay }) => {
   return (
     <>
       <div className="d-flex justify-content-center  gap-5 align-item-center">
@@ -49,11 +24,10 @@ const ResumeEditor = ({ formData, setFormData, page, setPage, FormTitles }) => {
               PREV
             </button>
             <button
-              disabled={page === FormTitles.length - 1}
+              // disabled={page === FormTitles.length - 1}
               onClick={() => {
                 if (page === FormTitles.length - 1) {
-                  alert("Profile Updated");
-                  console.log(formData);
+                  alert("Download the resume from download button");
                 } else {
                   setPage((currPage) => currPage + 1);
                 }

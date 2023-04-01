@@ -117,6 +117,7 @@ const Main = () => {
           page={page}
           setPage={setPage}
           FormTitles={FormTitles}
+          PageDisplay={PageDisplay}
         />
 
         <ResumeTemplate ref={resumeRef} formData={formData} />
